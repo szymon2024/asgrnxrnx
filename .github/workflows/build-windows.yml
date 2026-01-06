@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "$env:USERPROFILE\AppData\Roaming\ghcup\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
-      - name: Compile asgrnx
+      - name: Compile asgrnxrnx
         run: |
           ghc -O2 AsgRnxRnx.hs -o asgrnxrnx.exe
           del *.hi, *.o
