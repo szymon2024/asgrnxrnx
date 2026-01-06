@@ -30,8 +30,8 @@ jobs:
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
-  	    with:
-    	    name: "asgrnxrnx ${{ github.ref_name }}"
-    	    files: asgrnxrnx.exe
+        with:
+          name: "asgrnxrnx ${{ github.ref_name }}"
+          files: asgrnxrnx.exe
 
 
