@@ -26,7 +26,7 @@ Opis działania programu:
 
 Pliki obserwacyjne RINEX 3.04 systemu ASG-EUPOS są sztucznie
 wypełniane spacjami co znacznie zwiększa ich objętość i może
-uniemomożliwać prawidłow odczyt przez inne programy
+uniemomożliwać prawidłowy odczyt przez inne programy
 przetwarzające. Program wyszukuje typy obserwacji, które nie zawierą
 żadnych danych liczbowych i tworzy nowy plik bez tych typów. Wynikiem
 działania jest nowy, poprawiony plik RINEX.  Plik wejściowy nie jest
@@ -39,7 +39,7 @@ Pobieranie programu
 Jeśli chcesz tylko uruchomić program, pobierz gotowy plik 
 asgrnxrnx.exe z Releases.
 
-Nie trzeba pobierać żadnych innych plików.
+Nie trzeba pobierać innych plików.
 
 
 Przykład użycia
@@ -55,7 +55,7 @@ Kompilacja kodu źródłowego (opcjonalnie)
 --------------------------
 
 Jeśli chcesz skompilować program samodzielnie w systemie MS Windows,
-to trzeba pobrać i zainstalować kompilator języka haskell -
+to trzeba pobrać i zainstalować kompilator języka haskell o nazwie
 ghc. Następnie w wierszu poleceń:
 ```
 ghc -O2 AsgRnxRnx.hs -o asgrnxrnx.exe
