@@ -47,7 +47,7 @@ Przykład użycia
 
 W wierszu poleceń:
 ```
-asgrnxrnx XXXX001M.26o XXXX001M.26o
+asgrnxrnx XXXX001M.26o
 ```
 
 
