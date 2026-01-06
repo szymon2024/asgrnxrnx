@@ -1,3 +1,12 @@
+# Kiedy utworzysz tag np. 1.0.0-win w repozytorium GitHubActions:
+# - uruchomi Windows,
+# - zainstaluje GHC,
+# - skompiluje AsgRnxRnx.hs,
+# - wygeneruje asgrnxrnx.exe,
+# - automatycznie doda go do Releases.
+#
+# Możesz też uruchomić workflow ręcznie (przycisk Run workflow).
+
 name: Build Windows EXE
 
 on:
@@ -30,6 +39,8 @@ jobs:
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
-        with:
-          files: asgrnxrnx.exe
+  	with:
+    	name: "asgrnxrnx ${{ github.ref_name }}"
+    	files: asgrnxrnx.exe
+
 
