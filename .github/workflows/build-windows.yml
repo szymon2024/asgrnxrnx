@@ -1,0 +1,44 @@
+# Kiedy utworzysz tag np. 1.0.0-win w repozytorium GitHubActions:
+# - uruchomi Windows,
+# - zainstaluje GHC,
+# - skompiluje AsgRnxRnx.hs,
+# - wygeneruje asgrnxrnx.exe,
+# - automatycznie doda go do Releases.
+#
+# Możesz też uruchomić workflow ręcznie (przycisk Run workflow).
+
+name: Build Windows EXE
+
+on:
+  push:
+    tags:
+      - "*-win"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install GHCup
+        run: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force
+          irm https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 | iex
+
+      - name: Add GHC to PATH
+        run: |
+          echo "$env:USERPROFILE\AppData\Roaming\ghcup\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Compile asgrnx
+        run: |
+          ghc -O2 AsgRnxRnx.hs -o asgrnxrnx.exe
+          del *.hi, *.o
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: asgrnxrnx.exe
+
