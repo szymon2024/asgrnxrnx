@@ -1,8 +1,8 @@
 -- 2026-06-06
 {-
    asgrnxrnx to narzędzie dla plików obserwacyjnych RINEX 3.04 z
-   ASG‑EUPOS tworzące z pliku RINEX ASG-EUPOS nowy plik RINEX z
-   usuniętymi nadmiarowymi typami obserwacji.
+   ASG‑EUPOS tworzące na podstawie pliku RINEX ASG-EUPOS nowy plik
+   RINEX bez nadmiarowych typów obserwacji.
 -}
 
 {-# LANGUAGE OverloadedStrings #-}
