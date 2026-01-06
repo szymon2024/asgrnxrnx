@@ -7,16 +7,16 @@ Asgrnxrnx
 Asgrnxrnx is a simple tool designed for users in Poland. The program
 creates a new RINEX file without redundant observation types from a
 ASG-EUPOS RINEX 3.04 observation file.
----
+
 
 PL:
 
 Asgrnxrnx
-
+---------
 Asgrnxrnx to proste narzędzie wiersza poleceń, które z pliku
 obserwacyjnego RINEX 3.04 systemu ASG‑EUPOS tworzy nowy
 plik RINEX bez nadmiarowych typów obserwacji.
----
+
 
 Opis działania programu:
 
@@ -28,7 +28,6 @@ przetwarzające. Program wyszukuje typy obserwacji, które nie zawierą
 działania jest nowy, poprawiony plik RINEX.  Plik wejściowy nie jest
 modyfikowany.
 
----
 
 Pobieranie programu
 
