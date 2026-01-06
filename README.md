@@ -36,8 +36,8 @@ modyfikowany.
 Pobieranie programu
 -------------------
 
-Jeśli chcesz tylko uruchomić program, pobierz gotowy plik 
-asgrnxrnx.exe z Releases.
+Jeśli chcesz tylko uruchomić program w systemie Windows, pobierz
+gotowy plik asgrnxrnx.exe z Releases.
 
 Nie trzeba pobierać innych plików.
 
