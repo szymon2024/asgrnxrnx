@@ -3,7 +3,7 @@
 EN:
 
 Asgrnxrnx
-
+---------
 Asgrnxrnx is a simple tool designed for users in Poland. The program
 creates a new RINEX file without redundant observation types from a
 ASG-EUPOS RINEX 3.04 observation file.
