@@ -25,7 +25,7 @@ plik RINEX bez nadmiarowych typów obserwacji.
 Opis działania programu:
 
 Pliki obserwacyjne RINEX 3.04 systemu ASG-EUPOS są sztucznie
-wypełniane spacjami co znacznie zwiększa ich objętość i może
+wypełniane spacjami co znacznie zwiększa ich rozmiar i może
 uniemomożliwać prawidłowy odczyt przez inne programy
 przetwarzające. Program wyszukuje typy obserwacji, które nie zawierą
 żadnych danych liczbowych i tworzy nowy plik bez tych typów. Wynikiem
