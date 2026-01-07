@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - "*-linux"
+      - "*_linux"
   workflow_dispatch:
 
 jobs:

@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - "*-win"
+      - "*_win"
   workflow_dispatch:
 
 jobs:

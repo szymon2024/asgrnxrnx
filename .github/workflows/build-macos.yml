@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - "*-mac"
+      - "*_mac"
   workflow_dispatch:
 
 jobs:
