@@ -151,14 +151,19 @@ runWithOptions input mOutput verbose dryRun = do
           
     printf "Czytam   %s\n" input      
     bs <- L8.readFile input
-          
-    let (diffTMap, bs') = asgrnxrnx bs
 
+
+    let (diffTMap, bs') = asgrnxrnx bs
+        !_ = L8.take 1 bs'                        -- forcing error evaluation
+                          
     -- Verbose                 
     when verbose $ do
       printf "Usunięte typy obserwacji:\n"
       if Map.null diffTMap
-      then printf "  (nic nie usunięto)\n"
+      then
+          do
+            printf "  (nic nie usunięto)\n"
+            exitSuccess  
       else
           forM_ (Map.toList diffTMap) $ \(sys, obs) -> do
             printf "  System %c: " sys
@@ -176,7 +181,7 @@ runWithOptions input mOutput verbose dryRun = do
       exitSuccess
 
     -- Saving a file
-    printf "Zapisuję %s\n" output
+    printf "Zapisuję %s\n" output                       -- 
     L8.writeFile output bs'
     printf "Gotowe\n"
 
