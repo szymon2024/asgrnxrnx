@@ -1,4 +1,4 @@
--- 2026-01-06
+-- 2026-01-08
 {-
    asgrnxrnx to narzędzie dla plików obserwacyjnych RINEX 3.04 z
    ASG‑EUPOS tworzące na podstawie pliku RINEX ASG-EUPOS nowy plik
@@ -45,7 +45,7 @@ type ObsRnxHeaderRecord = (L8.ByteString, L8.ByteString)
 type ObsRnxDataRecord   = (EpochRecord, [ObsRecord])
 
 programVersion :: String
-programVersion = "1.0.0"
+programVersion = "1.0.1"
 
 fieldLen :: Int
 fieldLen = 16
@@ -482,7 +482,6 @@ obsRnxReadHeaderRecords
 obsRnxReadHeaderRecords bs
     | L8.null     bs           = errorWithoutStackTrace
                                    "Błąd\n\
-                                   \Nie można odnaleźć END OF HEADER.\
                                    \Puste wejście."
     | rnxVer      bs /= "3.04" = errorWithoutStackTrace
                                    "Błąd\n\
@@ -497,6 +496,10 @@ obsRnxReadHeaderRecords bs
       rnxFileType = trim . takeField 20 1
                     
       collect acc xs
+          | L8.null xs =
+              errorWithoutStackTrace
+              "Błąd\n\
+              \Nie można odnaleźć END OF HEADER."
           | label == "END OF HEADER"  =
               (reverse (r:acc), rest)
           | otherwise =
@@ -519,8 +522,8 @@ obsRnxReadHeaderRecord
 obsRnxReadHeaderRecord bs
     | L8.null bs = errorWithoutStackTrace
                      "Błąd\n\
-                     \Nie można odczytać rekordu nagłówka.\
-                     \ Puste wejście."
+                     \Nie można odczytać rekordu nagłówka.\n\
+                     \Puste wejście."
     | otherwise  = 
         let
             (fld1, bs1) = L8.splitAt 60 bs
